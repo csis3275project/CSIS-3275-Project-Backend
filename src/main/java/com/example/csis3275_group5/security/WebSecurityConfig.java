@@ -22,7 +22,7 @@ import com.example.csis3275_group5.security.service.UserDetailsServiceImpl;
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfig {
 
-	private String h2ConsolePath = "/h2-console";
+//	private String h2ConsolePath = "/h2-console";
 
 	@Autowired
 	UserDetailsServiceImpl userDetailsService;
@@ -65,9 +65,9 @@ public class WebSecurityConfig {
 			.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 			.and()
 			.authorizeRequests()
-				.antMatchers("/api/**").permitAll()
-				.antMatchers(h2ConsolePath + "/**").permitAll()
-				.anyRequest().authenticated();
+				.antMatchers("/**").permitAll();
+//				.antMatchers(h2ConsolePath + "/**").permitAll()
+//				.anyRequest().authenticated();
 
 		http.headers().frameOptions().sameOrigin();
 

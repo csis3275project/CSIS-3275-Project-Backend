@@ -36,7 +36,7 @@ import com.example.csis3275_group5.security.service.UserDetailsImpl;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/api/auth")
+@RequestMapping("")
 public class AuthController {
 
 	@Autowired
