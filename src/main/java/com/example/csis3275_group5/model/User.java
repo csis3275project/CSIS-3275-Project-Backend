@@ -21,6 +21,8 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "users",
 			uniqueConstraints = {@UniqueConstraint(columnNames = "username")}
@@ -40,6 +42,7 @@ public class User {
 	@NotBlank
 	@Size(max = 150)
 	@Column(name = "user_password", length = 150)
+	@JsonIgnore
 	private String password;
 	
 	@OneToOne(mappedBy = "user", cascade = CascadeType.ALL,
